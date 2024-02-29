@@ -10,9 +10,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <div>
+          <button id='button'>Add background colour</button>
+        </div>
+        <script>
+          if (window) {
+            window.document.getElementById('button').addEventListener('click', () => { document.body.style.backgroundColor = 'yellow' });
+          }
+        </script>
+      </body>
     </html>
   );
 }

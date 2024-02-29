@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/NavBar";
 import type { Metadata } from "next";
 import Script from "next/script";
 
@@ -15,11 +16,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Navbar />
         {children}
         <div>
           <button id='button'>Add background colour</button>
         </div>
-        <Script src="/buttonscript.js" />
+        <Script id='myscript'>{`
+          if (window) {
+            window.document.getElementById('button').addEventListener('click', () => { document.body.style.backgroundColor = 'yellow' });
+          }`}
+        </Script>
       </body>
     </html>
   );

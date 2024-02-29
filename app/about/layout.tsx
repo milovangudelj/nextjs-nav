@@ -4,8 +4,8 @@ export default function AboutLayout({
     children: React.ReactNode
   }) {
     return (
-      <section>
+      <div>
         {children}
-      </section>
+      </div>
     )
   }

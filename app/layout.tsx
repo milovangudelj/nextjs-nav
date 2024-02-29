@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,11 +19,7 @@ export default function RootLayout({
         <div>
           <button id='button'>Add background colour</button>
         </div>
-        <script>
-          if (window) {
-            window.document.getElementById('button').addEventListener('click', () => { document.body.style.backgroundColor = 'yellow' });
-          }
-        </script>
+        <Script src="/buttonscript.js" />
       </body>
     </html>
   );
